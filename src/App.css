@@ -36,3 +36,51 @@
     transform: rotate(360deg);
   }
 }
+.navBarContainer{
+  display: flex;
+  background-color: #61dafb;
+  justify-content: space-between;
+}
+.titulo{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-style: italic;
+  font-size: 30px;
+}
+.listaPags{
+  display: flex;
+  list-style: none;
+  font-size: 24px;
+  justify-content: space-around;
+}
+ul{
+  margin-left: 2%;
+  margin-right: 5%;
+}
+a{
+  font-size: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-style: italic;
+  margin-top: 2%;
+  text-decoration: none;
+}
+         
+.btn-grad {
+  background-image: linear-gradient(to right, #348F50 0%, #56B4D3  51%, #348F50  100%);
+  margin: 10px;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;            
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+  
+}
+
+.btn-grad:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
