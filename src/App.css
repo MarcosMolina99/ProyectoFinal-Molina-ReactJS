@@ -45,6 +45,7 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-style: italic;
   font-size: 30px;
+  padding-top: 1%;
 }
 .listaPags{
   display: flex;
@@ -62,6 +63,10 @@ a{
   font-style: italic;
   margin-top: 2%;
   text-decoration: none;
+  padding-right: 2%;
+}
+.inicioSesion{
+  padding-top: 0%;
 }
          
 .btn-grad {
@@ -83,4 +88,10 @@ a{
   background-position: right center; /* change the direction of the change here */
   color: #fff;
   text-decoration: none;
+}
+.saludo{
+  font-style: italic;
+}
+.hiperVinculoCarrito{
+  width: 3%;
 }
