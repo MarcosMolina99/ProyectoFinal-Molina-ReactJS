@@ -95,3 +95,17 @@ a{
 .hiperVinculoCarrito{
   width: 3%;
 }
+
+.btnAgregar{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 2%;
+  margin-top: 3%;
+  border-radius: 8px;
+  font-size: 18px;
+}
+.cadaProducto{
+  background-color: #56B4D3;
+  padding: 5%;
+  border-radius: 8px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

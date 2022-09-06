@@ -1,4 +1,4 @@
-import CartWidget from "./Componentes/CartWidget";
+import CartWidget from "./CartWidget";
 const NavBar = () =>{
     return(
         <div className="navBarContainer">

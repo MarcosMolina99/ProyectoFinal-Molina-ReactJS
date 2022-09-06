@@ -1,7 +1,13 @@
-import React from "react"
+import ItemCount from "./ItemCount"
 const ItemListContainer = ({greeting}) => {
+  const stock=10;
   return (
-    <h1 className="saludo">{greeting}</h1>
+    <div>
+      <h1 className="saludo">{greeting}</h1>
+     
+     <ItemCount stock={stock} />
+    </div>
+    
     
   )
 }
