@@ -109,3 +109,6 @@ a{
   border-radius: 8px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+.data{
+  border-bottom: 4px solid #56B4D3;
+}
