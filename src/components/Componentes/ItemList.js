@@ -1,6 +1,7 @@
 import Item from "./Item"
+import data from "./mockData"
 
-const ItemList = ({lista}) => {
+const ItemList = ({detalle}) => {
   return (
     <div>
       {

@@ -3,7 +3,7 @@ import data from "./mockData";
 import ItemList from "./ItemList";
 import { useEffect, useState } from "react";
 
-const ItemListContainer = ({greeting}) => {
+const ItemListContainer = () => {
   const [productList, setProductList] = useState([]);
 
     useEffect(()=> {
@@ -21,8 +21,6 @@ const ItemListContainer = ({greeting}) => {
   })
   return (
     <div>
-      <ItemList lista= {productList} />
-     
      <ItemCount stock={stock} />
     </div>
     
