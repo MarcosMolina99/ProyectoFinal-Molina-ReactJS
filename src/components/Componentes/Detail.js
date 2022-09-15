@@ -1,4 +1,4 @@
-
+import ItemCount from "./ItemCount"
 
 const Detail = ({title, price, image, description}) => {
     return (
@@ -7,6 +7,7 @@ const Detail = ({title, price, image, description}) => {
         <h2>{title}</h2>
         <h3 className="data">${price}</h3>
         <h4 className="description">{description}</h4>
+        <ItemCount stock={10} />
       </div>
     )
   }
