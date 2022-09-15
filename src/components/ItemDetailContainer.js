@@ -1,9 +1,12 @@
 import ItemDetail from "./ItemDetail";
 import data from "./Componentes/mockData";
 import { useEffect, useState } from "react";
+import {useParams} from "react-router-dom";
 
 const ItemDetailContainer = () => {
     const [productDetail, setProductDetail] = useState([]);
+    const {id} = useParams();
+
     useEffect(()=> {
         getItem.then((response) =>{
           setProductDetail(response);
@@ -13,7 +16,7 @@ const ItemDetailContainer = () => {
     
       const getItem = new Promise((resolve,reject)=> {
         setTimeout(()=>{
-          resolve(data);
+          setProductDetail(data.filter(productDetail => productDetail.id === id))
         }, 2000)
       })
   return (
