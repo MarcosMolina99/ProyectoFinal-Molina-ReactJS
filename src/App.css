@@ -148,3 +148,10 @@ h3{
 .title{
   color: #56B4D3;
 }
+.filter{
+  text-decoration: none;
+  color: white;
+  list-style: none;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+  font-style: italic;
+}

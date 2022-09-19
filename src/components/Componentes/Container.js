@@ -2,27 +2,55 @@ import ItemCount from "./ItemCount"
 import data from "./mockData";
 import ItemList from "./ItemList";
 import { useEffect, useState } from "react";
-import ItemDetail from "../ItemDetail";
-import ItemDetailContainer from "../ItemDetailContainer";
+import ItemDetailContainer from "./ItemDetailContainer";
+import {Link} from "react-router-dom";
+import {useParams} from "react-router-dom"
 
 const ItemListContainer = () => {
   const [productList, setProductList] = useState([]);
+  const {categoryName} = useParams();
 
-    useEffect(()=> {
-      getItems.then((response) =>{
-        setProductList(response);
-      })
-      .catch(error => console.log(error));
-    }, []);
-  const stock=10;
+  const getItems = async()=> {
+    if(categoryName){
+      const respuesta = await data.filter((product)=> product.category === categoryName);
+      setProductList(respuesta);
+    }else{
+      const respuesta = await data;
+      setProductList(respuesta);
+    }
+  }
 
-  const getItems = new Promise((resolve,reject)=> {
-    setTimeout(()=>{
-      resolve(data);
-    }, 2000)
-  })
+  // useEffect(()=> {
+  //   getItems.then((response) =>{
+  //     setProductList(response);
+  //   })
+  //   .catch(error => console.log(error));
+  // }, [categoryName]);
+
+  useEffect(()=> {
+    getItems();
+  }, [categoryName]);
+
   return (
     <div>
+      <ul>
+        <Link to={"/Category/Remera"}>
+          <li className="filter">Remeras deportivas</li>
+        </Link>
+        
+        <Link to={"/Category/Pantalon"}>
+          <li className="filter">Pantalones deportivos</li>
+        </Link>
+        
+        <Link to={"/Category/Zapatillas"}>
+          <li className="filter">Zapatillas deportivas</li>
+        </Link>
+        
+        <Link to={"/Category/Conjunto"}>
+          <li className="filter">Conjuntos deportivos</li>
+        </Link>
+        
+      </ul>
       <div className="divProducts">
         <ItemList lista={productList}/>
       </div>

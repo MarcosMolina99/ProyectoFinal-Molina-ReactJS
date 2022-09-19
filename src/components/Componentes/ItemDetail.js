@@ -1,6 +1,5 @@
-import Detail from "./Componentes/Detail"
-import Item from "./Componentes/Item"
-import ItemList from "./Componentes/ItemList"
+import Detail from "./Detail"
+
 
 const ItemDetail = ({detalle}) => {
   return (
