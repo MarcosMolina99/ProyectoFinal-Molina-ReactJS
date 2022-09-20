@@ -1,25 +1,26 @@
 import { useState } from "react"
 
-const ItemCount = ({stock}) => {
-    const [BotonContador, setBotonContador] = useState(1);
+const ItemCount = ({setCount, count}) => {
 
     const sacar = () =>{
-        BotonContador > 0 ? setBotonContador(BotonContador - 1) : alert("Se alcanzó el mínimo");
+        if(count === 0){
+          return;
+        }
+        setCount(count-1);
     }
     const agregar = () =>{
-        BotonContador <= stock - 1 ? setBotonContador(BotonContador + 1) : alert("Se alcanzó el máximo del stock");
+        setCount(count+1);
     }
   return (
     <div className="cadaProducto">
         {/* <h2>Producto</h2> */}
-        <h3 className="tituloStock">El stock máximo es de: {stock}</h3>
+        <h3 className="tituloStock">Cantidad de unidades</h3>
         <button onClick={agregar}>+</button>
-        <h3>{BotonContador}</h3>
+        <h3>{count}</h3>
         <button onClick={sacar}>-</button>
-        <div>
+        {/* <div>
           <button className="btnAgregar">Agregar al carrito</button>
-        </div>
-        
+        </div> */}
     </div>
   )
 }
