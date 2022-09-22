@@ -33,7 +33,7 @@ const ItemListContainer = () => {
 
   return (
     <div>
-      <ul>
+      <ul className="filters">
         <Link to={"/Category/Remera"}>
           <li className="filter">Remeras deportivas</li>
         </Link>
@@ -50,6 +50,10 @@ const ItemListContainer = () => {
           <li className="filter">Conjuntos deportivos</li>
         </Link>
         
+      </ul>
+
+      <ul>
+        <li className="cartLink"><Link className="otherCartLink" to={"/cart"}>Ver carrito</Link></li>
       </ul>
       <div className="divProducts">
         <ItemList lista={productList}/>

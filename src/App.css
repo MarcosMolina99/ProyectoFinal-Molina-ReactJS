@@ -180,3 +180,15 @@ h3{
   border-radius: 7px;
   padding: 2%;
 }
+.filters{
+  display: flex;
+  justify-content: center;
+}
+.cartLink{
+  list-style: none;
+  text-decoration: none;
+}
+.otherCartLink{
+  font-size: 26px;
+  text-align: center;
+}
