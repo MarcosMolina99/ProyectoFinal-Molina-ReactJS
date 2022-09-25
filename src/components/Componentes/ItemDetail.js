@@ -9,9 +9,20 @@ import { CartContext } from "../context/CartContext";
 const ItemDetail = ({detalle}) => {
   const [count, setCount] = useState(0);
   const {addToCart} = useContext(CartContext);
+  const [button, setButton] = useState("Agregar al carrito");
+
+  function buttonText(){
+    setButton("Ir al carrito");
+  }
+
 
   function onAdd(detalle){
     addToCart(detalle, count)
+  }
+
+  function buttonClicked(detalle){
+    buttonText();
+    onAdd(detalle);
   }
   
   return (
@@ -24,7 +35,7 @@ const ItemDetail = ({detalle}) => {
         
       }
       <ItemCount setCount={setCount} count={count}/>
-      <button className="toCart" onClick={()=> onAdd(detalle)}>Agregar al carrito</button>
+      <button className="toCart" onClick={()=> buttonClicked(detalle) }>{button}</button>
     </div>
   )
 }

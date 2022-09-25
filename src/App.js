@@ -8,6 +8,7 @@ import Contact from './pages/Contact';
 import {CartProvider} from './components/context/CartProvider';
 import Cart from './components/Componentes/Cart';
 
+
 function App() {
   return (
     <CartProvider>
