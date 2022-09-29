@@ -1,5 +1,5 @@
 import Item from "./Item"
-import data from "./mockData"
+// import data from "./mockData"
 import {Link} from "react-router-dom"
 
 const ItemList = ({lista}) => {

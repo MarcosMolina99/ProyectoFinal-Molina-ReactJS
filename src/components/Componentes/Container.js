@@ -1,23 +1,60 @@
 import ItemCount from "./ItemCount"
-import data from "./mockData";
+// import data from "./mockData";
 import ItemList from "./ItemList";
 import { useEffect, useState } from "react";
 import ItemDetailContainer from "./ItemDetailContainer";
 import {Link} from "react-router-dom";
 import {useParams} from "react-router-dom"
+import { getFirestore, getDocs, collection, query, where } from "firebase/firestore";
 
 const ItemListContainer = () => {
   const [productList, setProductList] = useState([]);
   const {categoryName} = useParams();
 
-  const getItems = async()=> {
-    if(categoryName){
-      const respuesta = await data.filter((product)=> product.category === categoryName);
-      setProductList(respuesta);
-    }else{
-      const respuesta = await data;
-      setProductList(respuesta);
-    }
+  const getItems =()=> {
+    const db = getFirestore();
+    const querySnapshot = collection(db, "Products");
+    // const queryFilter = (
+    //   querySnapshot,
+    //   where("CategoryId","==", categoryName)
+    // );
+    // if(categoryName){
+    //   getDocs(queryFilter).then((response) =>{
+    //     const data = response.docs.map((product) =>{
+    //     console.log(data());
+    //     return {id: product.id, ...product.data()};
+    //   })
+    //   setProductList(data)
+    // })
+    // }else{
+    //   getDocs(querySnapshot).then((response) =>{
+    //       const data = response.docs.map((product) =>{
+    //       console.log(data());
+    //       return {id: product.id, ...product.data()};
+    //     })
+    //     setProductList(data)
+    //   })
+
+    // }
+
+
+    getDocs(querySnapshot).then(response =>{
+      
+      const data = response.docs.map((doc) =>{
+        console.log(doc.data());
+        return {id: doc.id, ...doc.data()};
+        
+      })
+      setProductList(data);
+    })
+
+    // if(categoryName){
+    //   const respuesta = await data.filter((product)=> product.category === categoryName);
+    //   setProductList(respuesta);
+    // }else{
+    //   const respuesta = await data;
+    //   setProductList(respuesta);
+    // }
   }
 
   // useEffect(()=> {

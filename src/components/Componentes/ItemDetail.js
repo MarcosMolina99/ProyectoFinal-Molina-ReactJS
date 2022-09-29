@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import ItemCount from "./ItemCount";
 import { useContext } from "react";
 import { CartContext } from "../context/CartContext";
-
+import {getFirestore} from "firebase/firestore"
 
 const ItemDetail = ({detalle}) => {
   const [count, setCount] = useState(0);
